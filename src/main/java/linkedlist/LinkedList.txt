@@ -1,0 +1,66 @@
+*) What is a Linked List?
+------------------------
+->A Linked List is a linear data structure where each element (called a node) contains: Data and A reference to the next node.
+->Here elements (nodes) are not stored in contiguous memory locations.
+
+  Unlike arrays:
+                Elements are not indexed.
+                Size is not fixed.
+                Insertions/Deletions are faster (in certain places).
+
+*) Types of Linked Lists:
+-----------------------
+Singly Linked List	-   Each node points to the next
+Doubly Linked List	-   Each node points to both next and previous
+Circular Linked List-	Last node points back to head
+
+*) Where Linked Lists Are Used:
+--------------------------------
+- Undo/Redo functionality (Doubly LL)
+- Stack/Queue implementations
+- Music/video playlists
+
+*) Operations on Linked Lists:
+-----------------------------
+Operation	            Description
+------------------------------------------------
+Traverse/Print	   -     Print all nodes from head to null
+Length	           -     Count the number of nodes
+Search	           -     Check if a value exists
+Insert at Head	   -     Add a node at the beginning
+Insert at Tail	   -     Add a node at the end
+Insert at Position -     Add at specific index (0-based)
+Delete at Head	   -     Remove first node
+Delete at Tail	   -     Remove last node
+Delete at Position -     Remove at specific index
+Delete by Value	   -     Remove the first occurrence of a value
+
+**) Intermediate Operations
+-------------------------------
+Operation	                    Use
+-------------------------------------
+Reverse a Linked List	-       Asked frequently – do it iteratively & recursively
+Find Middle Node	    -       Use 2-pointer (slow-fast) technique
+Detect Cycle	        -       Floyd’s Cycle Detection (Tortoise & Hare)
+Remove Cycle	        -       After detecting it, fix the cycle
+Find Nth Node from End	-       Two-pointer method
+Merge Two Sorted Lists	-       Combine two sorted LLs (used in merge sort)
+Check Palindrome	    -       Reverse second half & compare
+Sort a Linked List	    -       Often via Merge Sort (for O(n log n))
+Delete Nth Node from End-	    Common interview question
+
+***) Circular Linked List Operations
+------------------------------------
+Operation	                    Description
+-------------------------------------------
+Insert (Head or Tail)	    -   Carefully adjust the last node’s .next
+Traverse	                -   Stop when you return to head
+Delete Node	                -   Handle circular links properly
+
+****) Doubly Linked List Specific Operations
+--------------------------------------------
+Operation	                            Description
+---------------------------------------------------
+Insert/Delete at Front or End	    -   Maintain both next and prev pointers
+Reverse a DLL	                    -   Swap next and prev for all nodes
+Traverse Backward	                -   Start from tail using prev pointer
