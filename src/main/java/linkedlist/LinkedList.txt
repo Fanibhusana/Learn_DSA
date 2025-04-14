@@ -44,10 +44,10 @@ Find Middle Node	    -       Use 2-pointer (slow-fast) technique
 Detect Cycle	        -       Floyd’s Cycle Detection (Tortoise & Hare)
 Remove Cycle	        -       After detecting it, fix the cycle
 Find Nth Node from End	-       Two-pointer method
+Delete Nth Node from End -	    Common interview question
 Merge Two Sorted Lists	-       Combine two sorted LLs (used in merge sort)
 Check Palindrome	    -       Reverse second half & compare
 Sort a Linked List	    -       Often via Merge Sort (for O(n log n))
-Delete Nth Node from End-	    Common interview question
 
 ***) Circular Linked List Operations
 ------------------------------------

@@ -128,7 +128,7 @@ public class SingleLinkedList {
             }
         }
     }
-
+    // Delete by Value
     public void deleteByValue(int value) {
         if (head == null) {
             return; // List is empty
@@ -169,10 +169,10 @@ public class SingleLinkedList {
     //Find Middle Node
     /*     Slow and Fast Pointer Technique:: Using slow-fast pointers avoids multiple traversals and helps you write clean, efficient code
            -------------------------------
-        -Use two pointers: slow and fast
-        -slow moves 1 step at a time
-        -fast moves 2 steps at a time
-        -When fast reaches the end, slow is at the middle
+            -Use two pointers: slow and fast
+            -slow moves 1 step at a time
+            -fast moves 2 steps at a time
+            -When fast reaches the end, slow is at the middle
      */
     public void findMiddle(){
         Node slow = head;
@@ -183,6 +183,62 @@ public class SingleLinkedList {
         }
         if (slow != null) System.out.println("Middle Node: " + slow.data);
     }
+
+    //Detect and Remove Cycle
+    /*    Floyd’s Cycle Detection
+          -----------------------
+           -Use two pointers: slow and fast
+            -slow moves 1 step at a time
+            -fast moves 2 steps at a time
+           -If there's a cycle, they'll eventually meet inside the loop
+           -If there's no cycle, fast will hit null
+     */
+    public void detectAndRemoveCycle() {
+        Node slow = head;
+        Node fast = head;
+        boolean hasCycle = false;
+        //detect cycle
+        while (fast != null && fast.next != null) {
+            slow = slow.next;         // 1 step
+            fast = fast.next.next;    // 2 steps
+
+            if (slow == fast) {
+                hasCycle = true; // cycle found!
+                break;
+            }
+        }
+
+        //  If cycle exists
+        if (hasCycle) {
+            slow = head;
+            // Special case: cycle starts at head
+            if (slow == fast) {
+                while (fast.next != slow) {
+                    fast = fast.next;
+                }
+            } else {
+                while (slow.next != fast.next) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+            }
+            // 3. Break the cycle
+            fast.next = null;
+            System.out.println("Cycle removed!");
+        }
+        else {
+            System.out.println("No cycle found.");
+        }
+    }
+
+    //Find Nth Node from End
+    public void findNode(int position){
+        
+    }
+
+
+
+
 
     public static void main(String[] args) {
 
