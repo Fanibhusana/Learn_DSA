@@ -151,6 +151,39 @@ public class SingleLinkedList {
         previous.next = current.next; // Remove the node
     }
 
+    // Reverse
+    public void reverse(){
+    Node prev=null;
+    Node current=head;
+    Node next=null;
+
+        while (current != null) {
+            next = current.next;   // Store next node
+            current.next = prev;   // Reverse current node's pointer
+            prev = current;        // Move prev to current
+            current = next;        // Move to next node
+        }
+        head = prev; // New head is prev
+    }
+
+    //Find Middle Node
+    /*     Slow and Fast Pointer Technique:: Using slow-fast pointers avoids multiple traversals and helps you write clean, efficient code
+           -------------------------------
+        -Use two pointers: slow and fast
+        -slow moves 1 step at a time
+        -fast moves 2 steps at a time
+        -When fast reaches the end, slow is at the middle
+     */
+    public void findMiddle(){
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;         // 1 step
+            fast = fast.next.next;    // 2 steps
+        }
+        if (slow != null) System.out.println("Middle Node: " + slow.data);
+    }
+
     public static void main(String[] args) {
 
         SingleLinkedList list = new SingleLinkedList();
